@@ -23,7 +23,7 @@ void setup()
 void loop()
 {
   //read the position of the pot
-  potPosition = analogRead(A0);    //set potPosition to a number between 0 and 1023 based on how far the knob is turned
+  potPosition = analogRead(A0)*2;    //set potPosition to a number between 0 and 1023 based on how far the knob is turned
   Serial.println(potPosition);     //print the value of potPosition in the serial monitor on the computer
 
   //change the LED blink speed based on the pot value

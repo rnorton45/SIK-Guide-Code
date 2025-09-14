@@ -9,6 +9,19 @@
 
   View circuit diagram and instructions at: https://learn.sparkfun.com/tutorials/sparkfun-inventors-kit-experiment-guide---v41
   Download drawings and code at: https://github.com/sparkfun/SIK-Guide-Code
+
+  Notes: According to page 26, as more light shines on the photoresister, so its resistance decreases.
+  Therefore assigning a value "photoresister" which decreases as it gets darker is confusing nomenclature - actually the voltage at A0 decreases
+  as the photoresister's resinstance increases.
+  
+  Also confusing on page 26 is the photoresister is referred to as R2, when according to the hookup guide it is installed at the postive voltage
+  end of the divider and the fixed resitor at the negative end. Normal convention is the postive end resister is referred to as R1.
+
+  The circuit and code combination work, since as more light shines, so the resistance of the photoresister decreases and voltage out of the 
+  divider read at A0 increases, to a maximum ~1018 with a phone LED placed on top  ( so near zero. )
+
+  With the light off and finger placed over the photoresister and paper between the LED and photoresitor, voltage read at A0 according to 10 bit ADC falls
+  to minimum value ~16, indicating resistance in dark must be much greater than the 10K ohm fixed resister.
 */
 
 int photoresistor = 0;              //this variable will hold a value based on the brightness of the ambient light
